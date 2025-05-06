@@ -10,7 +10,7 @@ resource "azurerm_linux_virtual_machine" "linux_virtual_machine" {
   network_interface_ids = [var.network_interface_id]
 
   os_disk {
-    name              = "${var.name}-osdisk"
+    name              = "${random.string}-osdisk"
     caching           = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
